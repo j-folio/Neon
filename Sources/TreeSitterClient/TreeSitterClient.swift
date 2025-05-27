@@ -368,6 +368,7 @@ extension TreeSitterClient {
     /// This is the async version of executeResolvingQuery(:in:preferSynchronous:prefetchMatches:completionHandler:)
     @available(macOS 10.15, iOS 13.0, watchOS 6.0.0, tvOS 13.0.0, *)
     @MainActor
+	@preconcurrency
     public func resolvingQueryCursor(with query: Query,
                                      in range: NSRange,
                                      executionMode: ExecutionMode = .asynchronous(prefetch: true),
